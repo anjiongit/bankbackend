@@ -10,6 +10,10 @@ app.use(express.json());
 const dbuser = encodeURIComponent(process.env.DBUSER);
 const dbpass = encodeURIComponent(process.env.DBPASS);
 
+app.get("/", (req, res) => {
+  res.send("Hello World"); 
+});
+
 
 mongoose
   .connect(
