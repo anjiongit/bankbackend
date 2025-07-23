@@ -14,13 +14,14 @@ app.get("/", (req, res) => {
   res.send("Hello World"); 
 });
 
+const PORT = process.env.PORT || 8080;
 
 mongoose
   .connect(
     `mongodb+srv://${dbuser}:${dbpass}@cluster0.fciu6os.mongodb.net/bankapp?retryWrites=true&w=majority&appName=Cluster0`
   )
   .then(() => {
-    app.listen(8080, () => {
+    app.listen(PORT, () => {
       console.log("Server started");
     });
   });
